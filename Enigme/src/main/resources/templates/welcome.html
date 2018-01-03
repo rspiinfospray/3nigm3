@@ -5,8 +5,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <link th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
-	<script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
-	<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+<script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 
 </head>
 <body>
@@ -24,10 +24,13 @@
 	      	 <a th:if="${indice1}"  href="#" id="idIndice1" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-info-sign"></span> Indice</a>
 	      </div>
 	      <div class="col-sm-2">
-	      	 <button type="submit" class="btn btn-primary">Submit</button>
+	      	 <button type="submit" class="btn btn-primary">Déverouiller</button>
 	      </div>
-	      <span th:if="${indice2}" th:text="${enigme1}"></span>
+
       </div>
+        <div class="form-group row">
+        	<h2><span th:if="${indice2}" th:text="${enigme1}"></span></h2>
+        </div>
     
      <div class="form-group row">
       <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Enigme 2</label>
@@ -39,10 +42,13 @@
       	 <a th:if="${indice2}" href="#" id="idIndice2" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-info-sign"></span> Indice</a>
       </div>
       <div class="col-sm-2">
-      	 <button type="submit" class="btn btn-primary">Submit</button>
+      	 <button type="submit" class="btn btn-primary">Déverouiller</button>
       </div>
-      <span th:if="${indice3}" th:text="${enigme2}"></span>
+    
     </div>
+     <div class="form-group row">
+       <h2><span th:if="${indice3}" th:text="${enigme2}"></span></h2>
+     </div>
     
     <div class="form-group row">
       <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Enigme 3</label>
@@ -54,9 +60,13 @@
       	 <a th:if="${indice3}" id="idIndice3" href="#" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-info-sign"></span> Indice</a>
       </div>
       <div class="col-sm-2">
-      	 <button type="submit" class="btn btn-primary">Submit</button>
+      	 <button type="submit" class="btn btn-primary">Déverouiller</button>
       </div>
+      
     </div>
+     <div class="form-group row">
+    	<h2><span th:if="${end}" th:text="${enigme3}"></span></h2>
+     </div>
    
   </form>
   <a th:if="${end}" href="dfsg54fds45" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-gift"></span> Félicitations</a>
@@ -64,7 +74,7 @@
 </div>
 
 <!-- Creates the bootstrap modal where the image will appear -->
-<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="imagemodal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -80,10 +90,54 @@
     </div>
   </div>
 </div>
+
+<!-- Creates the bootstrap modal where the image will appear -->
+<div class="modal fade" id="imagemodal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Indice 2</h4>
+      </div>
+      <div class="modal-body">
+         <img id="imageresource" th:src="@{/resources/static/indice2.png}" style="width: 400px; height: 264px;" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Creates the bootstrap modal where the image will appear -->
+<div class="modal fade" id="imagemodal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Indice 3</h4>
+      </div>
+      <div class="modal-body">
+         <img id="imageresource" th:src="@{/resources/static/indice3.png}" style="width: 400px; height: 264px;" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script type="text/javascript">
 
-$("#idIndice1").on("click", function() {
-	   $('#imagemodal').modal('show');
+	$("#idIndice1").on("click", function() {
+	   $('#imagemodal1').modal('show');
+	});
+	
+	$("#idIndice2").on("click", function() {
+		   $('#imagemodal2').modal('show');
+		});
+	
+	$("#idIndice3").on("click", function() {
+		   $('#imagemodal3').modal('show');
 	});
 </script>
 

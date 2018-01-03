@@ -10,11 +10,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Controller
-public class EnigmeController extends WebMvcConfigurerAdapter {
+public class EnigmeController  {
 
     private boolean indice1 = true;
 
@@ -22,11 +20,12 @@ public class EnigmeController extends WebMvcConfigurerAdapter {
 
     private boolean indice3;
 
-    private final String enigme1 = "fqsdfqsd fdsqfdsqf dsf sd qfs df qdsf f dqfsd ";
+    private final String enigme1 = "Issue de l'inseste de Cinyras et Myrrah je trone en compagnie de mon fatal Sus Scorfa.";
 
-    private final String enigme2 = "fqsdfqsd fdsqfdsqf dsf sd qfs df qdsf f dqfsd ";
+    private final String enigme2 = "Text de l'enigme 2 a définir.";
 
-    private final String enigme3 = "fqsdfqsd fdsqfdsqf dsf sd qfs df qdsf f dqfsd ";
+    private final String enigme3 = "Quand le Palais Royale se trouve dans mon dos, quand la verdure se trouve devant moi,"
+    		+ " quand les femmes aux cherubins se tiennent à mes cotés à 800 mètres vers le nord je reside.";
 
     private boolean end;
 
@@ -94,15 +93,20 @@ public class EnigmeController extends WebMvcConfigurerAdapter {
 
         return "welcome";
     }
+    
+    
+    @RequestMapping("/dfsg54fds45")
+    public String felicitations(final Map<String, Object> model) {
 
-    @Override
-    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        registry.addResourceHandler(
-            "/webjars/**",
-            "/**",
-            "/css/**",
-            "/js/**")
-            .addResourceLocations("classpath:/resources/static/");
+        model.put("felicitations", "Dame croquette félicitation tu as reussi les premieres epreuves. "
+        		+ "Pour te feliciter tu es invité ce soir au restaurant. ");
+
+
+        return "dfsg54fds45";
     }
+    
+    
+
+   
 
 }

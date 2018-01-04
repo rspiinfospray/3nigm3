@@ -19,13 +19,15 @@ public class EnigmeController  {
     private boolean indice2;
 
     private boolean indice3;
+    
+    private final String enigme1 = "Dissimulée sous la plante terrestre indiquant souvant le nord à quelques pas de ma résidence la dernière clé tu trouveras.";
 
-    private final String enigme1 = "Issue de l'inseste de Cinyras et Myrrah je trone en compagnie de mon fatal Sus Scorfa.";
+    private final String enigme2 = "Issue de l'inceste de Cinyras et Myrrha je trone en compagnie de mon fatal Sus Scorfa.";
 
-    private final String enigme2 = "Text de l'enigme 2 a définir.";
-
-    private final String enigme3 = "Quand le Palais Royale se trouve dans mon dos, quand la verdure se trouve devant moi,"
-    		+ " quand les femmes aux cherubins se tiennent à mes cotés à 800 mètres vers le nord je reside.";
+    private final String enigme3 = "Quand la  résidence du Roi se trouve dans mon dos, quand la verdure se trouve devant moi,"
+    		+ " quand les femmes aux cherubins se tiennent à mes cotés à 275 mètres vers le nord je reside.";
+    
+    private final String rassembler = "Toutes les enigmes maintenant tu dois rassembler";
 
     private boolean end;
 
@@ -76,6 +78,7 @@ public class EnigmeController  {
         model.put("enigme1", this.enigme1);
         model.put("enigme2", this.enigme2);
         model.put("enigme3", this.enigme3);
+        model.put("rassembler",this.rassembler);
 
         return "welcome";
     }
@@ -98,8 +101,7 @@ public class EnigmeController  {
     @RequestMapping("/dfsg54fds45")
     public String felicitations(final Map<String, Object> model) {
 
-        model.put("felicitations", "Dame croquette félicitation tu as reussi les premieres epreuves. "
-        		+ "Pour te feliciter tu es invité ce soir au restaurant. ");
+        model.put("felicitations", "1830");
 
 
         return "dfsg54fds45";

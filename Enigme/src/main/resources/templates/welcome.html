@@ -17,14 +17,14 @@
     <div class="form-group row">
 	      <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg ">Enigme 1</label>
 	      <div class="col-sm-6">
-	        <input type="text" th:field="*{password1}" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Password"></input>
-	        <b><span style="font-color:red" th:if="${#fields.hasErrors('password1')}" th:errors="*{password1}">Name Error</span></b>
+	        <input type="text" th:field="*{password1}" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Clé 1"></input>
+	        <b><span style="font-color:red" th:if="${#fields.hasErrors('password1')}" th:errors="*{password1}"></span></b>
 	      </div>
 	       <div class="col-sm-2">
 	      	 <a th:if="${indice1}"  href="#" id="idIndice1" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-info-sign"></span> Indice</a>
 	      </div>
 	      <div class="col-sm-2">
-	      	 <button type="submit" class="btn btn-primary">Déverouiller</button>
+	      	 <button type="submit" class="btn btn-warning">Déverouiller</button>
 	      </div>
 
       </div>
@@ -35,14 +35,14 @@
      <div class="form-group row">
       <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Enigme 2</label>
       <div class="col-sm-6">
-        <input type="text" th:field="*{password2}" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Password"></input>
-          <b><span th:if="${#fields.hasErrors('password2')}" th:errors="*{password1}">Name Error</span> </b>
+        <input type="text" th:field="*{password2}" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Clé 2"></input>
+          <b><span th:if="${#fields.hasErrors('password2')}" th:errors="*{password1}"></span> </b>
       </div>
        <div class="col-sm-2">
       	 <a th:if="${indice2}" href="#" id="idIndice2" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-info-sign"></span> Indice</a>
       </div>
       <div class="col-sm-2">
-      	 <button type="submit" class="btn btn-primary">Déverouiller</button>
+      	 <button type="submit" class="btn btn-warning">Déverouiller</button>
       </div>
     
     </div>
@@ -53,14 +53,14 @@
     <div class="form-group row">
       <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Enigme 3</label>
       <div class="col-sm-6">
-        <input type="text" th:field="*{password3}" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Password"></input>
-          <b><span th:if="${#fields.hasErrors('password3')}" th:errors="*{password1}">Name Error</span></b>
+        <input type="text" th:field="*{password3}" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Clé 3"></input>
+          <b><span th:if="${#fields.hasErrors('password3')}" th:errors="*{password1}"></span></b>
       </div>
        <div class="col-sm-2">
       	 <a th:if="${indice3}" id="idIndice3" href="#" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-info-sign"></span> Indice</a>
       </div>
       <div class="col-sm-2">
-      	 <button type="submit" class="btn btn-primary">Déverouiller</button>
+      	 <button type="submit" class="btn btn-warning">Déverouiller</button>
       </div>
       
     </div>
@@ -69,7 +69,8 @@
      </div>
    
   </form>
-  <a th:if="${end}" href="dfsg54fds45" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-gift"></span> Félicitations</a>
+  <a th:if="${end}" href="dfsg54fds45" class="btn btn-lg success"><span class="glyphicon glyphicon-ok-sign"></span> Le final...</a>
+  <h2><span th:if="${end}" th:text="${rassembler}"></span></h2>
   
 </div>
 

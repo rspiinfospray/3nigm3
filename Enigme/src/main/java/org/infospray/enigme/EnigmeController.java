@@ -22,7 +22,7 @@ public class EnigmeController  {
     
     private final String enigme1 = "Dissimulée sous la plante terrestre indiquant souvant le nord à quelques pas de ma résidence la dernière clé tu trouveras.";
 
-    private final String enigme2 = "Issue de l'inceste de Cinyras et Myrrha je trone en compagnie de mon fatal Sus Scrofa.";
+    private final String enigme2 = "Issu de Althée et de Œnée je trone en compagnie de mon mutilé Sus scrofa.";
 
     private final String enigme3 = "Quand la  résidence du Roi se trouve dans mon dos, quand la verdure se trouve devant moi,"
     		+ " quand les femmes aux cherubins se tiennent à mes cotés à 275 mètres vers le nord je reside.";

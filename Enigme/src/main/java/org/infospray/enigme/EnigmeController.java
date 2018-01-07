@@ -20,9 +20,11 @@ public class EnigmeController  {
 
     private boolean indice3;
     
-    private final String enigme1 = "Dissimulée sous la plante terrestre indiquant souvant le nord à quelques pas de ma résidence la dernière clé tu trouveras.";
+    private boolean indice4;
+    
+    private final String enigme1 = "Dans l'écorse dissimulée à 47 pas de l'archer par le petit chemin la dernière clé tu trouveras.";
 
-    private final String enigme2 = "Issu de Althée et de Œnée je trone en compagnie de mon mutilé Sus scrofa.";
+    private final String enigme2 = "Assassin de mes oncles. Issu de Althée et de Œnée je trone en compagnie de mon mutilé Sus scrofa.";
 
     private final String enigme3 = "Quand la  résidence du Roi se trouve dans mon dos, quand la verdure se trouve devant moi,"
     		+ " quand les femmes aux cherubins se tiennent à mes cotés à 275 mètres vers le nord je reside.";
@@ -36,6 +38,8 @@ public class EnigmeController  {
     private final String password2 = "POUIHJQS";
 
     private final String password3 = "ERVBKJNK";
+   
+    private final String password4 = "POLEDFTQ";
 
     private EnigmeForm enigmeForm;
 
@@ -65,9 +69,17 @@ public class EnigmeController  {
             this.indice3 = false;
             model.put("indice3", this.indice3);
         }
+        if (enigmeForm.getPassword3().equals(this.password3)) {
+            this.indice4 = true;
+            model.put("indice4", this.indice4);
+        } else {
+            this.indice4 = false;
+            model.put("indice4", this.indice4);
+        }
         if (enigmeForm.getPassword1().equals(this.password1)
             && enigmeForm.getPassword2().equals(this.password2)
-            && enigmeForm.getPassword3().equals(this.password3)) {
+            && enigmeForm.getPassword3().equals(this.password3)
+            && enigmeForm.getPassword4().equals(this.password4)) {
             this.end = true;
             model.put("end", this.end);
         } else {
@@ -89,6 +101,7 @@ public class EnigmeController  {
         model.put("indice1", this.indice1);
         model.put("indice2", this.indice2);
         model.put("indice3", this.indice3);
+        model.put("indice4", this.indice4);
         model.put("end", this.end);
         model.put("enigme1", this.enigme1);
         model.put("enigme2", this.enigme2);

@@ -12,7 +12,7 @@ public class EnigmeForm {
 
     @NotEmpty
     private String password3;
-    
+
     @NotEmpty
     private String password4;
 
@@ -40,14 +40,12 @@ public class EnigmeForm {
         this.password3 = password3;
     }
 
-	public String getPassword4() {
-		return password4;
-	}
+    public String getPassword4() {
+        return this.password4;
+    }
 
-	public void setPassword4(String password4) {
-		this.password4 = password4;
-	}
-    
-    
+    public void setPassword4(final String password4) {
+        this.password4 = password4;
+    }
 
 }

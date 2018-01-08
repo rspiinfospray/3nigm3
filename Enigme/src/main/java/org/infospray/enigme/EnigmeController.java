@@ -12,24 +12,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class EnigmeController  {
+public class EnigmeController {
 
     private boolean indice1 = true;
 
     private boolean indice2;
 
     private boolean indice3;
-    
+
     private boolean indice4;
-    
+
     private final String enigme1 = "Dans l'écorse dissimulée à 47 pas de l'archer par le petit chemin la dernière clé tu trouveras.";
 
     private final String enigme2 = "Assassin de mes oncles. Issu de Althée et de Œnée je trone en compagnie de mon mutilé Sus scrofa.";
 
     private final String enigme3 = "Quand la  résidence du Roi se trouve dans mon dos, quand la verdure se trouve devant moi,"
-    		+ " quand les femmes aux cherubins se tiennent à mes cotés à 275 mètres vers le nord je reside.";
-    
-    private final String rassembler = "Toutes les enigmes maintenant tu dois rassembler";
+        + " quand les femmes aux cherubins se tiennent à mes cotés à 275 mètres vers le nord je reside.";
+
+    private final String enigme31 = "Toutes les enigmes maintenant tu dois rassembler";
 
     private boolean end;
 
@@ -38,8 +38,8 @@ public class EnigmeController  {
     private final String password2 = "POUIHJQS";
 
     private final String password3 = "ERVBKJNK";
-   
-    private final String password4 = "POLEDFTQ";
+
+    private final String password4 = "125";
 
     private EnigmeForm enigmeForm;
 
@@ -90,7 +90,7 @@ public class EnigmeController  {
         model.put("enigme1", this.enigme1);
         model.put("enigme2", this.enigme2);
         model.put("enigme3", this.enigme3);
-        model.put("rassembler",this.rassembler);
+        model.put("enigme31", this.enigme31);
 
         return "welcome";
     }
@@ -106,22 +106,41 @@ public class EnigmeController  {
         model.put("enigme1", this.enigme1);
         model.put("enigme2", this.enigme2);
         model.put("enigme3", this.enigme3);
+        model.put("enigme31", this.enigme31);
 
         return "welcome";
     }
-    
-    
+
+    @RequestMapping("/reset")
+    public String reset(final Map<String, Object> model) {
+
+        this.indice1 = true;
+
+        this.indice2 = false;
+
+        this.indice3 = false;
+
+        this.indice4 = false;
+
+        this.end = false;
+
+        model.put("indice1", this.indice1);
+        model.put("indice2", this.indice2);
+        model.put("indice3", this.indice3);
+        model.put("indice4", this.indice4);
+        model.put("end", this.end);
+        model.put("enigme1", this.enigme1);
+        model.put("enigme2", this.enigme2);
+        model.put("enigme3", this.enigme3);
+        model.put("enigme31", this.enigme31);
+
+        return "welcome";
+    }
+
     @RequestMapping("/dfsg54fds45")
     public String felicitations(final Map<String, Object> model) {
 
-        model.put("felicitations", "1830");
-
-
         return "dfsg54fds45";
     }
-    
-    
-
-   
 
 }

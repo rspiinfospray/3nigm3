@@ -14,6 +14,9 @@
 <br/><br/><br/><br/>
 <div class="container">
  <form action="#" th:action="@{/}" th:object="${enigmeForm}" method="post">
+ 
+ 
+ 
     <div class="form-group row">
 	      <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg ">Enigme 1</label>
 	      <div class="col-sm-6">
@@ -26,17 +29,17 @@
 	      <div class="col-sm-2">
 	      	 <button type="submit" class="btn btn-warning glyphicon glyphicon-lock">&nbsp;Déverouiller</button>
 	      </div>
-
       </div>
-        <div class="form-group row">
+      
+      <div class="form-group row">
         	<h2><span th:if="${indice2}" th:text="${enigme1}"></span></h2>
-        </div>
+      </div>
     
      <div class="form-group row">
       <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Enigme 2</label>
       <div class="col-sm-6">
         <input type="text" th:field="*{password2}" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Clé 2"></input>
-          <b><span th:if="${#fields.hasErrors('password2')}" th:errors="*{password1}"></span> </b>
+          <b><span th:if="${#fields.hasErrors('password2')}" th:errors="*{password2}"></span> </b>
       </div>
        <div class="col-sm-2">
       	 <a th:if="${indice2}" href="#" id="idIndice2" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-info-sign"></span> Indice</a>
@@ -44,8 +47,8 @@
       <div class="col-sm-2">
       	  <button type="submit" class="btn btn-warning glyphicon glyphicon-lock">&nbsp;Déverouiller</button>
       </div>
-    
     </div>
+    
      <div class="form-group row">
        <h2><span th:if="${indice3}" th:text="${enigme2}"></span></h2>
      </div>
@@ -54,7 +57,7 @@
       <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Enigme 3</label>
       <div class="col-sm-6">
         <input type="text" th:field="*{password3}" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Clé 3"></input>
-          <b><span th:if="${#fields.hasErrors('password3')}" th:errors="*{password1}"></span></b>
+          <b><span th:if="${#fields.hasErrors('password3')}" th:errors="*{password3}"></span></b>
       </div>
        <div class="col-sm-2">
       	 <a th:if="${indice3}" id="idIndice3" href="#" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-info-sign"></span> Indice</a>
@@ -62,22 +65,31 @@
       <div class="col-sm-2">
       	  <button type="submit" class="btn btn-warning glyphicon glyphicon-lock">&nbsp;Déverouiller</button>
       </div>
-
     </div>
+     
      <div class="form-group row">
-    	<h2><span th:if="${end}" th:text="${enigme3}"></span></h2>
-     </div>
-   
-  </form>
-
-  <h2><span th:if="${end}" th:text="${rassembler}"></span></h2>
-   <div class="form-group row">
-      <div class="col-sm-2">
+       <h2><span th:if="${indice4}" th:text="${enigme3}"></span></h2>
+       <h2><span th:if="${indice4}" th:text="${enigme31}"></span></h2>
+     </div> 
+      
+      
+    <div class="form-group row">
+      <label for="lgFormGroupInput" class="col-sm-2 col-form-label col-form-label-lg">Enigme finale</label>
+      <div class="col-sm-6">
+        <input type="text" th:field="*{password4}" class="form-control form-control-lg" id="lgFormGroupInput" placeholder="Clé finale"></input>
+          <b><span th:if="${#fields.hasErrors('password4')}" th:errors="*{password4}"></span></b>
+      </div>
+       <div class="col-sm-2">
       	 <a th:if="${indice4}" id="idIndice4" href="#" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-info-sign"></span> Indice</a>
       </div>
-   </div>
-   
-     <a th:if="${end}" href="dfsg54fds45" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Le final...</a>
+      <div class="col-sm-2">
+      	  <button type="submit" class="btn btn-warning glyphicon glyphicon-lock">&nbsp;Déverouiller</button>
+      </div>
+    </div>
+    
+  </form>
+
+   <a th:if="${end}" href="dfsg54fds45" class="btn btn-lg btn-success"><span class="glyphicon glyphicon-thumbs-up"></span> Le final...</a>
   
 </div>
 
@@ -141,7 +153,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Indice 4</h4>
+        <h4 class="modal-title" id="myModalLabel">Indice final</h4>
       </div>
       <div class="modal-body">
          <img id="imageresource" th:src="@{/indice4.jpg}" style="width:  50%; height: 50%;" />
@@ -166,6 +178,11 @@
 	$("#idIndice3").on("click", function() {
 		   $('#imagemodal3').modal('show');
 	});
+
+	$("#idIndice4").on("click", function() {
+		   $('#imagemodal4').modal('show');
+	});
+	
 </script>
 
 </body>

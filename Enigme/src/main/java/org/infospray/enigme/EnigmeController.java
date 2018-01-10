@@ -22,12 +22,12 @@ public class EnigmeController {
 
     private boolean indice4;
 
-    private final String enigme1 = "Dans l'écorse dissimulée à 47 pas de l'archer par le petit chemin la dernière clé tu trouveras.";
+    private final String enigme1 = "Dans l'écorse dissimulée à 47 pas de l'archer par le petit chemin, la dernière clé tu trouveras.";
 
     private final String enigme2 = "Assassin de mes oncles. Issu de Althée et de Œnée je trone en compagnie de mon mutilé Sus scrofa.";
 
-    private final String enigme3 = "Quand la  résidence du Roi se trouve dans mon dos, quand la verdure se trouve devant moi,"
-        + " quand les femmes aux cherubins se tiennent à mes cotés à 275 mètres vers le nord je reside.";
+    private final String enigme3 = "Quand la  résidence du Roi se trouve dans ton dos, quand la verdure se trouve devant toi,"
+        + " quand les femmes aux cherubins se tiennent à tes cotés à 275 mètres vers le nord je reside.";
 
     private final String enigme31 = "Toutes les enigmes maintenant tu dois rassembler";
 

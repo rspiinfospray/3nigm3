@@ -27,7 +27,7 @@ public class EnigmeController {
     private final String enigme2 = "Assassin de mes oncles. Issu de Althée et de Œnée je trone en compagnie de mon mutilé Sus scrofa.";
 
     private final String enigme3 = "Quand la  résidence du Roi se trouve dans ton dos, quand la verdure se trouve devant toi,"
-        + " quand les femmes aux cherubins se tiennent à tes cotés à 275 mètres vers le nord je reside.";
+        + " quand les femmes aux cherubins se tiennent à tes cotés à 285 mètres vers le Nord-Nord Est je reside.";
 
     private final String enigme31 = "Toutes les enigmes maintenant tu dois rassembler";
 
@@ -39,7 +39,7 @@ public class EnigmeController {
 
     private final String password3 = "ERVBKJNK";
 
-    private final String password4 = "125";
+    private final String password4 = "CLEF125";
 
     private EnigmeForm enigmeForm;
 
@@ -55,31 +55,31 @@ public class EnigmeController {
     public String postForm(@Valid final EnigmeForm enigmeForm, final BindingResult bindingResult, final ModelMap model) {
         this.indice1 = true;
         model.put("indice1", this.indice1);
-        if (enigmeForm.getPassword1().equals(this.password1)) {
+        if (enigmeForm.getPassword1().toLowerCase().equals(this.password1.toLowerCase())) {
             this.indice2 = true;
             model.put("indice2", this.indice2);
         } else {
             this.indice2 = false;
             model.put("indice2", this.indice2);
         }
-        if (enigmeForm.getPassword2().equals(this.password2)) {
+        if (enigmeForm.getPassword2().toLowerCase().equals(this.password2.toLowerCase())) {
             this.indice3 = true;
             model.put("indice3", this.indice3);
         } else {
             this.indice3 = false;
             model.put("indice3", this.indice3);
         }
-        if (enigmeForm.getPassword3().equals(this.password3)) {
+        if (enigmeForm.getPassword3().toLowerCase().equals(this.password3.toLowerCase())) {
             this.indice4 = true;
             model.put("indice4", this.indice4);
         } else {
             this.indice4 = false;
             model.put("indice4", this.indice4);
         }
-        if (enigmeForm.getPassword1().equals(this.password1)
-            && enigmeForm.getPassword2().equals(this.password2)
-            && enigmeForm.getPassword3().equals(this.password3)
-            && enigmeForm.getPassword4().equals(this.password4)) {
+        if (enigmeForm.getPassword1().toLowerCase().equals(this.password1.toLowerCase())
+            && enigmeForm.getPassword2().toLowerCase().equals(this.password2.toLowerCase())
+            && enigmeForm.getPassword3().toLowerCase().equals(this.password3.toLowerCase())
+            && enigmeForm.getPassword4().toLowerCase().equals(this.password4.toLowerCase())) {
             this.end = true;
             model.put("end", this.end);
         } else {
